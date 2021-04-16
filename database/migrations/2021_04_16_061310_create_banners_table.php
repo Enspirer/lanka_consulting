@@ -18,6 +18,7 @@ class CreateBannersTable extends Migration
             $table->text('title');
             $table->text('title_nr');
             $table->text('sort_order');
+            $table->text('image');
             $table->text('featured');
             $table->timestamps();
         });
