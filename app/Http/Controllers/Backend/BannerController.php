@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
+use App\Models\FileManager;
 use Illuminate\Http\Request;
 use DataTables;
 
@@ -21,10 +22,12 @@ class BannerController extends Controller
 
     public function store(Request $request)
     {
+        $fileManager = FileManager::where('id',$request->image)->first();
+
         $banners = new Banner;
         $banners->title = $request->title;
         $banners->title_nr = $request->title_nr;
-        $banners->image = 1;
+        $banners->image = $fileManager->url;
         $banners->featured = $request->feature;
         $banners->sort_order = $request->sort_order;
         $banners->save();
