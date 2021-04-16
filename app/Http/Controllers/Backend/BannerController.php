@@ -42,7 +42,7 @@ class BannerController extends Controller
 
         return Datatables::of($banners)
             ->editColumn('image', function($row){
-                return '<img src="'.file_manager_get_url($row->image).'" style="height: 100px;">';
+                return '<img src="'.url('/').'" style="height: 100px;">';
             })
             ->addColumn('action', function($row){
                 $btn = '<a href="'.route('admin.banners.delete',$row->id).'" class="edit btn btn-danger btn-sm" style="margin-right: 10px"><i class="fa fa-trash"></i> Delete </a>';
