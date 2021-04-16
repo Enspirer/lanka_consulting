@@ -39,13 +39,19 @@ class BannerController extends Controller
         return view('backend.banners.edit');
     }
 
+    public function delete($id)
+    {
+        Banner::where('id',$id)->delete();
+        return back();
+    }
+
     public function getData()
     {
         $banners = Banner::all();
 
         return Datatables::of($banners)
             ->editColumn('image', function($row){
-                return '<img src="'.url('/').'" style="height: 100px;">';
+                return '<img src="'.$row->image.'" style="height: 100px;">';
             })
             ->addColumn('action', function($row){
                 $btn = '<a href="'.route('admin.banners.delete',$row->id).'" class="edit btn btn-danger btn-sm" style="margin-right: 10px"><i class="fa fa-trash"></i> Delete </a>';
