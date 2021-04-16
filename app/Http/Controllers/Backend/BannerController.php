@@ -19,6 +19,18 @@ class BannerController extends Controller
 
     }
 
+    public function store(Request $request)
+    {
+        $banners = new Banner;
+        $banners->title = $request->title;
+        $banners->title_nr = $request->title_nr;
+        $banners->image = 1;
+        $banners->featured = $request->feature;
+        $banners->sort_order = $request->sort_order;
+        $banners->save();
+        return back();
+    }
+
     public function edit($id)
     {
         return view('backend.banners.edit');
@@ -30,7 +42,7 @@ class BannerController extends Controller
 
         return Datatables::of($banners)
             ->editColumn('image', function($row){
-                return '<img src="'.file_manager_get_url($row->image_id).'" style="height: 100px;">';
+                return '<img src="'.file_manager_get_url($row->image).'" style="height: 100px;">';
             })
             ->addColumn('action', function($row){
                 $btn = '<a href="'.route('admin.banners.delete',$row->id).'" class="edit btn btn-danger btn-sm" style="margin-right: 10px"><i class="fa fa-trash"></i> Delete </a>';

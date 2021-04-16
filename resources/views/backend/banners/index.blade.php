@@ -8,7 +8,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <form action="{{route('admin.gallery.store')}}" method="post">
+                    <form action="{{route('admin.banners.store')}}" method="post">
                         {{csrf_field()}}
                         <div class="row">
                             <div class="col-md-6">
@@ -43,7 +43,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Sort Order</label>
-                                            <input type="number" value="0" min="0"  name="caption" class="form-control">
+                                            <input type="number" value="0" min="0"  name="sort_order" class="form-control">
                                         </div>
                                     </div>
                                 </div>
