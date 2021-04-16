@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\AwardsController;
 use App\Http\Controllers\Backend\FileManagerController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\NewsController;
+use App\Http\Controllers\Backend\BannerController;
 // All route names are prefixed with 'admin.'.
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -46,3 +47,9 @@ Route::get('news/create', [NewsController::class, 'create'])->name('news.create'
 Route::post('news/store', [NewsController::class, 'store'])->name('news.store');
 Route::get('news/delete/{id}', [NewsController::class, 'delete'])->name('news.delete');
 
+Route::get('banner/index', [BannerController::class, 'index'])->name('banners.index');
+Route::get('banner/get-details', [BannerController::class, 'getData'])->name('banners.json');
+Route::get('banner/create', [BannerController::class, 'create'])->name('banners.create');
+Route::get('banner/edit', [BannerController::class, 'edit'])->name('banners.edit');
+Route::post('banner/store', [BannerController::class, 'store'])->name('banners.store');
+Route::get('banner/delete/{id}', [BannerController::class, 'delete'])->name('banners.delete');

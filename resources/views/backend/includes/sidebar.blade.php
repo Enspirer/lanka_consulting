@@ -20,13 +20,10 @@
 
             <li class="nav-item">
                 <a class="nav-link {{active_class(Route::is('admin/news'))}}" href="{{ route('admin.news.index') }}">
-                    <i class="nav-icon fas fa-file-signature"></i>
+                    <i class="nav-icon fas fa-newspaper"></i>
                     News
                 </a>
             </li>
-
-
-
             <li class="nav-item">
                 <a class="nav-link {{active_class(Route::is('admin/file_manager'))}}" href="{{ route('admin.file_manager.index') }}">
                     <i class="nav-icon fas fa-folder"></i>
@@ -35,11 +32,12 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link {{active_class(Route::is('admin/gallery'))}}" href="{{ route('admin.gallery.index') }}">
-                    <i class="nav-icon fas fa-photo-video"></i>
-                    Gallery
+                <a class="nav-link {{active_class(Route::is('admin/banners'))}}" href="{{route('admin.banners.index') }}">
+                    <i class="nav-icon fas fa-images"></i>
+                    Banners
                 </a>
             </li>
+
 
 
 

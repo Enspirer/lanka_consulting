@@ -11,7 +11,7 @@
     <title>@yield('title', app_name())</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
-    <meta name="description" content="@yield('meta_description', 'MMGS Admin')">
+    <meta name="description" content="@yield('meta_description', 'Lanka Consulting')">
     <meta name="author" content="">
     <link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" rel="stylesheet">
     <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
@@ -29,29 +29,6 @@
     @stack('after-styles')
 </head>
 
-{{--
-     * CoreUI BODY options, add following classes to body to change options
-     * // Header options
-     * 1. '.header-fixed'					- Fixed Header
-     *
-     * // Sidebar options
-     * 1. '.sidebar-fixed'					- Fixed Sidebar
-     * 2. '.sidebar-hidden'				- Hidden Sidebar
-     * 3. '.sidebar-off-canvas'		    - Off Canvas Sidebar
-     * 4. '.sidebar-minimized'			    - Minimized Sidebar (Only icons)
-     * 5. '.sidebar-compact'			    - Compact Sidebar
-     *
-     * // Aside options
-     * 1. '.aside-menu-fixed'			    - Fixed Aside Menu
-     * 2. ''			    - Hidden Aside Menu
-     * 3. '.aside-menu-off-canvas'	        - Off Canvas Aside Menu
-     *
-     * // Breadcrumb options
-     * 1. '.breadcrumb-fixed'			    - Fixed Breadcrumb
-     *
-     * // Footer options
-     * 1. '.footer-fixed'					- Fixed footer
---}}
 <body class="app header-fixed sidebar-fixed aside-menu-off-canvas sidebar-lg-show">
     @include('backend.includes.header')
 
