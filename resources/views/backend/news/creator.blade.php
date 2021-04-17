@@ -6,7 +6,7 @@
     <div class="">
         <div class="card">
             <div class="card-body">
-                <form action="{{route('admin.news.edit')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.news.store')}}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
 
                     <div class="light-style flex-grow-1 container-p-y">
