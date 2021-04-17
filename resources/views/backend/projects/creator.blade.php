@@ -58,7 +58,11 @@
 
                                                         <div class="form-group">
                                                             <label class="form-label">Status</label>
-                                                            <input type="text" name="status" class="form-control" value="">
+                                                            <select name="status" class="form-control">
+                                                                <option value="1">Enabled</option>
+                                                                <option value="0">Disabled</option>
+                                                            </select>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -98,7 +102,10 @@
 
                                                         <div class="form-group">
                                                             <label class="form-label">Status</label>
-                                                            <input type="text" name="status_nr" class="form-control" value="">
+                                                            <select name="status_nr" class="form-control">
+                                                                <option value="1">Enabled</option>
+                                                                <option value="0">Disabled</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -110,15 +117,21 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="form-label">Sort Order</label>
-                                    <input type="number" min="0" name="sort_order" class="form-control mb-1" value="" required>
+                                    <input type="number" min="0" name="sort_order" class="form-control mb-1" value="1" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Year</label>
-                                    <input type="number" name="year" class="form-control mb-1" value="" required>
+                                    <input type="number" name="year" class="form-control mb-1" value="0"  required>
                                 </div>
                                 <div class="form-group">
+                                    <label class="form-label">Client</label>
+                                    <input type="text" name="client" class="form-control mb-1" value="" required>
+                                </div>
+
+                                <div class="form-group">
                                     <label class="form-label">Cover Photo</label>
-                                    @include('backend.file_manager.file_manager',['file_caption' => 'Feature Image','file_input_name' => 'cover_image','multiple' => false,'data' => null])
+
+                                    @include('backend.file_manager.file_manager',['file_caption' => 'Feature Image','file_input_name' => 'cover_image','multiple' => false,'data' => $ocver_image])
                                 </div>
                             </div>
                         </div>

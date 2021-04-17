@@ -20,7 +20,7 @@
                         <tr>
                             <th scope="col">#ID</th>
                             <th scope="col">Project Name</th>
-                            <th scope="col">Client</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Location</th>
                             <th scope="col">Cover</th>
                             <th scope="col">Created at</th>
@@ -54,8 +54,8 @@
                     name: 'name'
                 },
                 {
-                    data: 'client',
-                    name: 'client'
+                    data: 'status',
+                    name: 'status'
                 },
                 {
                     data: 'location',

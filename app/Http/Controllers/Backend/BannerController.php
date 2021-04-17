@@ -23,7 +23,6 @@ class BannerController extends Controller
     public function store(Request $request)
     {
         $fileManager = FileManager::where('id',$request->image)->first();
-
         $banners = new Banner;
         $banners->title = $request->title;
         $banners->title_nr = $request->title_nr;
