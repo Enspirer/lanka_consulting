@@ -131,7 +131,7 @@
                                 <div class="form-group">
                                     <label class="form-label">Cover Photo</label>
 
-                                    @include('backend.file_manager.file_manager',['file_caption' => 'Feature Image','file_input_name' => 'cover_image','multiple' => false,'data' => $ocver_image])
+                                    @include('backend.file_manager.file_manager',['file_caption' => 'Feature Image','file_input_name' => 'cover_image','multiple' => false,'data' => null])
                                 </div>
                             </div>
                         </div>

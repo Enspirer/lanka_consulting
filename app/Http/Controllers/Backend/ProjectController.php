@@ -11,7 +11,10 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        return view('backend.projects.index');
+        $getDataDetals = Projects::all();
+        return view('backend.projects.index',[
+            'get_data_details' => $getDataDetals
+        ]);
     }
 
 
@@ -63,7 +66,7 @@ class ProjectController extends Controller
             })
             ->addColumn('action', function($row){
                 $btn = '<a href="'.route('admin.projects.edit',$row->id).'" class="edit btn btn-primary btn-sm" style="margin-right: 10px"><i class="fa fa-edit"></i> Edit </a>';
-                $btn2 = '<a href="'.route('admin.project.delete',$row->id).'" class="edit btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete </a>';
+                $btn2 = '<button data-toggle="modal" data-target="#exampleModal'.$row->id.'" class="edit btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete </button>';
                 return  $btn.$btn2;
             })
             ->rawColumns(['action'])
