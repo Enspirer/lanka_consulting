@@ -50,6 +50,7 @@ Route::get('news/delete/{id}', [NewsController::class, 'delete'])->name('news.de
 Route::get('banner/index', [BannerController::class, 'index'])->name('banners.index');
 Route::get('banner/get-details', [BannerController::class, 'getData'])->name('banners.json');
 Route::get('banner/create', [BannerController::class, 'create'])->name('banners.create');
-Route::get('banner/edit', [BannerController::class, 'edit'])->name('banners.edit');
+Route::get('banner/edit/{id}', [BannerController::class, 'edit'])->name('banners.edit');
 Route::post('banner/store', [BannerController::class, 'store'])->name('banners.store');
+Route::post('banner/update', [BannerController::class, 'update'])->name('banners.update');
 Route::get('banner/delete/{id}', [BannerController::class, 'delete'])->name('banners.delete');

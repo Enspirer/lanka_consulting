@@ -20,6 +20,35 @@ class BannerController extends Controller
 
     }
 
+    public function update(Request $request)
+    {
+        if($request->image)
+        {
+            if(is_numeric($request->image)) {
+                $imageFiles = FileManager::where('id',$request->image)->first();
+                $featureimgs =  $imageFiles->url;
+
+            }else{
+                $featureimgs =  $request->image;
+            }
+
+        }else{
+            $featureimgs = $request->image;
+        }
+
+
+
+        Banner::where('id',$request->id)->update([
+           'image' => $featureimgs,
+           'sort_order' => $request->sort_order,
+           'title' => $request->title,
+           'featured' => $request->featured
+        ]);
+
+
+        return back();
+    }
+
     public function store(Request $request)
     {
         $fileManager = FileManager::where('id',$request->image)->first();
@@ -35,7 +64,14 @@ class BannerController extends Controller
 
     public function edit($id)
     {
-        return view('backend.banners.edit');
+        $bannerDetails = Banner::where('id',$id)->first();
+        $fileManager = FileManager::where('url',$bannerDetails->image)->first();
+
+
+        return view('backend.banners.edit',[
+            'bannerDetails' => $bannerDetails,
+            'file_manager' => $fileManager
+        ]);
     }
 
     public function delete($id)
@@ -53,8 +89,9 @@ class BannerController extends Controller
                 return '<img src="'.$row->image.'" style="height: 100px;">';
             })
             ->addColumn('action', function($row){
-                $btn = '<a href="'.route('admin.banners.delete',$row->id).'" class="edit btn btn-danger btn-sm" style="margin-right: 10px"><i class="fa fa-trash"></i> Delete </a>';
-                return  $btn;
+                $btn1 = ' <a href="'.route('admin.banners.edit',$row->id).'" class="edit btn btn-primary btn-sm" style="margin-right: 10px"><i class="fa fa-edit"></i> Edit </a>';
+                $btn2 = '<a href="'.route('admin.banners.delete',$row->id).'" class="edit btn btn-danger btn-sm" style="margin-right: 10px"><i class="fa fa-trash"></i> Delete </a>';
+                return  $btn1.$btn2;
             })
             ->rawColumns(['action','image'])
             ->make();
