@@ -18,11 +18,10 @@
                 <table class="table table-striped table-bordered" id="villadatatable" style="width:100%">
                     <thead>
                         <tr>
-                            <th scope="col">#ID</th>
+                            <th scope="col">Cover</th>
                             <th scope="col">Project Name</th>
                             <th scope="col">Status</th>
                             <th scope="col">Location</th>
-                            <th scope="col">Cover</th>
                             <th scope="col">Created at</th>
                             <th scope="col">Option</th>
                         </tr>
@@ -76,9 +75,10 @@
         var table = $('#villadatatable').DataTable({
             processing: false,
             ajax: "{{route('admin.project.getDetails')}}",
-            columns: [{
-                    data: 'id',
-                    name: 'id'
+            columns: [
+                {
+                    data: 'cover',
+                    name: 'cover'
                 },
                 {
                     data: 'name',
@@ -91,10 +91,6 @@
                 {
                     data: 'location',
                     name: 'location'
-                },
-                {
-                    data: 'cover',
-                    name: 'cover'
                 },
                 {
                     data: 'created_at',

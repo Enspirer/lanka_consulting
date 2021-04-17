@@ -56,6 +56,9 @@ class ProjectController extends Controller
     {
         $category = Projects::select(['id', 'name', 'client','location','cover','created_at']);
         return Datatables::of($category)
+            ->editColumn('cover',function ($row){
+                return '<img src="'.$row->cover.'" style="height:100px;">';
+            })
             ->editColumn('status',function ($row){
                 if ($row->status == 1)
                 {
@@ -69,7 +72,7 @@ class ProjectController extends Controller
                 $btn2 = '<button data-toggle="modal" data-target="#exampleModal'.$row->id.'" class="edit btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete </button>';
                 return  $btn.$btn2;
             })
-            ->rawColumns(['action'])
+            ->rawColumns(['action','cover'])
             ->make();
     }
 
