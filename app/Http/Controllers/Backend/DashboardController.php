@@ -19,12 +19,12 @@ class DashboardController extends Controller
     {
         $projects = count(Projects::all());
         $files = count(FileManager::all());
-        $gallery = count(Gallery::all());
+        $banners = count(Gallery::all());
 
         return view('backend.dashboard',[
             'projects' => $projects,
             'files' => $files,
-            'gallery' => $gallery
+            'banners' => $banners
         ]);
     }
 }

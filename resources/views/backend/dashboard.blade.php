@@ -15,8 +15,8 @@
         <div class="col-md-3">
             <div class="card">
                 <div class="container"><br>
-                    <h3>Gallery</h3>
-                    <h2>{{$gallery}}</h2>
+                    <h3>Banners</h3>
+                    <h2>{{$banners}}</h2>
                 </div>
             </div><!--card-->
         </div><!--col-->
