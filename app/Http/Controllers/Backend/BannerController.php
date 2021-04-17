@@ -12,12 +12,19 @@ class BannerController extends Controller
 {
     public function index()
     {
-        return view('backend.banners.index');
+        $getDataDetals = Banner::all();
+
+        return view('backend.banners.index',[
+            'get_data_details' => $getDataDetals
+        ]);
+
     }
 
     public function create()
     {
 
+
+        return view('backend.banners.index');
     }
 
     public function update(Request $request)
@@ -82,9 +89,10 @@ class BannerController extends Controller
             ->editColumn('image', function($row){
                 return '<img src="'.$row->image.'" style="height: 100px;">';
             })
+
             ->addColumn('action', function($row){
                 $btn1 = ' <a href="'.route('admin.banners.edit',$row->id).'" class="edit btn btn-primary btn-sm" style="margin-right: 10px"><i class="fa fa-edit"></i> Edit </a>';
-                $btn2 = '<a href="'.route('admin.banners.delete',$row->id).'" class="edit btn btn-danger btn-sm" style="margin-right: 10px"><i class="fa fa-trash"></i> Delete </a>';
+                $btn2 = '<button data-toggle="modal" data-target="#exampleModal'.$row->id.'" class="edit btn btn-danger btn-sm" style="margin-right: 10px"><i class="fa fa-trash"></i> Delete </button>';
                 return  $btn1.$btn2;
             })
             ->rawColumns(['action','image'])

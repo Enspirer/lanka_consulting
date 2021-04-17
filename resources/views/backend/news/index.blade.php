@@ -18,7 +18,7 @@
                     <table class="table table-striped table-bordered" id="villadatatable" style="width:100%">
                         <thead>
                         <tr>
-                            <th scope="col">#ID</th>
+                            <th scope="col">Cover</th>
                             <th scope="col">Project Name</th>
                             <th scope="col">Sort Order</th>
                             <th scope="col">Option</th>
@@ -43,18 +43,18 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Delete {{$getDataDetails->name}}</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Delete News Item</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         Are you sure delete this item
-                        ({{$getDataDetails->name}})
+                        <p>({{$getDataDetails->name}})
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <a href="{{route('admin.project.delete',$getDataDetails->id)}}" type="button" class="btn btn-danger">Delete</a>
+                        <a href="{{route('admin.news.delete',$getDataDetails->id)}}" type="button" class="btn btn-danger">Delete</a>
                     </div>
                 </div>
             </div>
@@ -73,14 +73,16 @@
             var table = $('#villadatatable').DataTable({
                 processing: false,
                 ajax: "{{route('admin.news.json')}}",
-                columns: [{
-                    data: 'id',
-                    name: 'id'
+                columns: [
+                    {
+                        data: 'cover',
+                        name: 'cover'
                     },
                     {
                         data: 'name',
                         name: 'name'
-                    },{
+                    },
+                    {
                         data: 'sort_order',
                         name: 'sort_order'
                     },

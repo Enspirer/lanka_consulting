@@ -60,6 +60,9 @@ class NewsController extends Controller
         $category = News::select(['id', 'name', 'name_nr','remarks','link','description','description_nr','cover','featured','date','sort_order']);
 
         return Datatables::of($category)
+            ->editColumn('cover',function ($row){
+              return '<img style="height:100px" src="'.$row->cover.'">';
+            })
             ->editColumn('status',function ($row){
                 if ($row->status == 1)
                 {
@@ -71,10 +74,10 @@ class NewsController extends Controller
 
             ->addColumn('action', function($row){
                 $btn = '<a href="'.route('admin.news.edit',$row->id).'" class="edit btn btn-primary btn-sm" style="margin-right: 10px"><i class="fa fa-edit"></i> Edit </a>';
-                $btn2 = '<a href="'.route('admin.news.delete',$row->id).'" class="edit btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete </a>';
+                $btn2 = '<button data-toggle="modal" data-target="#exampleModal'.$row->id.'" class="edit btn btn-danger btn-sm" style="margin-right: 10px"><i class="fa fa-trash"></i> Delete </button>';
                 return  $btn.$btn2;
             })
-            ->rawColumns(['action'])
+            ->rawColumns(['action','cover'])
             ->make();
     }
 
