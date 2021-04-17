@@ -46,6 +46,7 @@ Route::get('news/get-details', [NewsController::class, 'getData'])->name('news.j
 Route::get('news/create', [NewsController::class, 'create'])->name('news.create');
 Route::post('news/store', [NewsController::class, 'store'])->name('news.store');
 Route::get('news/delete/{id}', [NewsController::class, 'delete'])->name('news.delete');
+Route::get('news/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
 
 Route::get('banner/index', [BannerController::class, 'index'])->name('banners.index');
 Route::get('banner/get-details', [BannerController::class, 'getData'])->name('banners.json');

@@ -158,7 +158,7 @@
             var editor_title = document.createElement('div');
             editor_title.innerHTML = '' +
                 '<div class="" style="color: white;padding: 10px;margin-top:10px;font-size: 20px;">' +
-                '<div>Enspirer CRM</div>' +
+                '<div>Enspirer CMS</div>' +
                 '</div>' +
                 '<div class="container">' +
                 '<label class="btn btn-primary">' +
@@ -221,19 +221,14 @@
             var image = new Image();
             image.src = URL.createObjectURL(file);
             editor.appendChild(image);
-
             // Create Cropper.js
-
-
                 var cropper = new Cropper(image, {
                     aspectRatio: varmet,
                 });
-
         }
 
         function change_ratios(ratio) {
             var editorr = document.getElementById("enp_editor");
-
             document.body.removeChild(editorr);
             varmet = ratio;
             genearateEditor(metFile,donObj,dropz);

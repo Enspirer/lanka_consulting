@@ -1,7 +1,3 @@
-
-
-
-
 @extends('backend.layouts.app')
 
 @section('title', app_name() . ' | ' . __('strings.backend.dashboard.title'))
@@ -10,7 +6,7 @@
     <div class="">
         <div class="card">
             <div class="card-body">
-                <form action="{{route('admin.news.store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.news.edit')}}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
 
                     <div class="light-style flex-grow-1 container-p-y">
@@ -30,12 +26,12 @@
                                                     <div class="card-body">
                                                         <div class="form-group">
                                                             <label class="form-label">Name</label>
-                                                            <input type="text" name="name" class="form-control mb-1" value="{{$news_details->name}}">
+                                                            <input type="text" name="name" class="form-control mb-1" value="">
                                                         </div>
 
                                                         <div class="form-group">
                                                             <label class="form-label">Description</label>
-                                                            <textarea type="text" name="description" class="form-control mb-1" rows="20">{{$news_details->description}}</textarea>
+                                                            <textarea type="text" name="description" class="form-control mb-1" rows="20"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -43,11 +39,11 @@
                                                     <div class="card-body">
                                                         <div class="form-group">
                                                             <label class="form-label">Name</label>
-                                                            <input type="text" name="name_nr" class="form-control mb-1" value="{{$news_details->name_nr}}">
+                                                            <input type="text" name="name_nr" class="form-control mb-1" value="">
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="form-label">Description</label>
-                                                            <textarea type="text" name="description_nr" class="form-control mb-1" rows="20">{{$news_details->description_nr}}</textarea>
+                                                            <textarea type="text" name="description_nr" class="form-control mb-1" rows="20"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -60,32 +56,32 @@
 
                                 <div class="form-group">
                                     <label class="form-label">Remarks</label>
-                                    <input type="text" name="remarks" class="form-control mb-1" value="{{$news_details->remarks}}" required>
+                                    <input type="text" name="remarks" class="form-control mb-1" value="" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Link</label>
-                                    <input type="text" name="link" class="form-control mb-1" value="{{$news_details->link}}" required>
+                                    <input type="text" name="link" class="form-control mb-1" value="" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label">Feature</label>
-                                    <input type="text" name="featured" class="form-control mb-1" value="{{$news_details->featured}}" required>
+                                    <input type="text" name="featured" class="form-control mb-1" value="" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label">Date</label>
-                                    <input type="date" name="date" class="form-control mb-1" value="{{$news_details->date}}" required>
+                                    <input type="date" name="date" class="form-control mb-1" value="" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label">Sort Order</label>
-                                    <input type="number" name="sort_order" class="form-control mb-1" value="{{$news_details->sort_order}}" required>
+                                    <input type="number" name="sort_order" class="form-control mb-1" value="0" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="form-label">Cover Photo</label>
 
-                                    @include('backend.file_manager.file_manager',['file_caption' => 'Feature Image','file_input_name' => 'cover','multiple' => false,'data' => $file_manager->file_name])
+                                    @include('backend.file_manager.file_manager',['file_caption' => 'Feature Image','file_input_name' => 'cover','multiple' => false,'data' => null])
                                 </div>
                             </div>
                         </div>
@@ -117,3 +113,4 @@
 
     </script>
 @endsection
+

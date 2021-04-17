@@ -45,6 +45,14 @@ Breadcrumbs::for('admin.banners.edit', function ($trail) {
     $trail->push('Banners Edit', route('admin.banners.edit',1));
 });
 
+Breadcrumbs::for('admin.news.edit', function ($trail) {
+    $trail->push('News Edit', route('admin.news.edit',1));
+});
+
+Breadcrumbs::for('admin.news.create', function ($trail) {
+    $trail->push('News Creator', route('admin.news.create'));
+});
+
 
 require __DIR__.'/auth.php';
 require __DIR__.'/log-viewer.php';
