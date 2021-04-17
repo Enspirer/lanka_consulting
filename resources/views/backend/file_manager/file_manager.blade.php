@@ -69,8 +69,6 @@
     <div class="form-group">
         <label class="form-label">{{$file_caption}}</label>
         <div id="select_img_{{$file_input_name}}" type="text" class="" style="border-color: grey;color: grey; padding: 10px;text-align: center;border-style: dashed;border-width: 1px;">
-
-
             @if($data)
                 <div class="" id="upload_content_{{$file_input_name}}">
                 </div>

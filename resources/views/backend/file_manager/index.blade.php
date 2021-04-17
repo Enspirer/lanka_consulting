@@ -168,7 +168,12 @@
 
                 '<label class="btn btn-primary">' +
                     '<input type="radio"  class="sr-only" onclick="change_ratios(5 / 3)" id="aspectRatio1" name="aspectRatio" value="1.7777777777777777">' +
-                    '<span class="docs-tooltip" data-toggle="tooltip" title="aspectRatio: 16 / 9">Gallery Image Ratio</span>' +
+                    '<span class="docs-tooltip" data-toggle="tooltip" title="aspectRatio: 16 / 9">Slider Image Ratio</span>' +
+                '</label>'+ '<br>' +
+
+                '<label class="btn btn-primary">' +
+                    '<input type="radio"  class="sr-only" onclick="change_ratios()" id="aspectRatio1" name="aspectRatio" value="1.7777777777777777">' +
+                    '<span class="docs-tooltip" data-toggle="tooltip" title="aspectRatio: 16 / 9">Free Ratio</span>' +
                 '</label>'+
 
                 '</div>';

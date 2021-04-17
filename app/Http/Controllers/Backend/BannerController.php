@@ -31,21 +31,15 @@ class BannerController extends Controller
             }else{
                 $featureimgs =  $request->image;
             }
-
         }else{
             $featureimgs = $request->image;
         }
-
-
-
         Banner::where('id',$request->id)->update([
            'image' => $featureimgs,
            'sort_order' => $request->sort_order,
            'title' => $request->title,
            'featured' => $request->featured
         ]);
-
-
         return back();
     }
 
