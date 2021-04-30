@@ -54,7 +54,7 @@ class ProjectController extends Controller
 
     public function getDetails()
     {
-        $category = Projects::select(['id', 'name', 'client','location','cover','created_at']);
+        $category = Projects::select(['id', 'name', 'status','client','location','cover','created_at']);
         return Datatables::of($category)
             ->editColumn('cover',function ($row){
                 return '<img src="'.$row->cover.'" style="height:100px;">';
