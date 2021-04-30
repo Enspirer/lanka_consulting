@@ -59,8 +59,9 @@
                                                         <div class="form-group">
                                                             <label class="form-label">Status</label>
                                                             <select name="status" class="form-control">
-                                                                <option value="1">Enabled</option>
-                                                                <option value="0">Disabled</option>
+                                                                <option value="Ongoing">Ongoing</option>
+                                                                <option value="Completed">Completed</option>
+                                                                <option value="Holding">Holding</option>
                                                             </select>
 
                                                         </div>
