@@ -60,12 +60,7 @@ class ProjectController extends Controller
                 return '<img src="'.$row->cover.'" style="height:100px;">';
             })
             ->editColumn('status',function ($row){
-                if ($row->status == 1)
-                {
-                    return 'Enabled';
-                }else{
-                    return 'Disabled';
-                }
+                return $row->status;
             })
             ->addColumn('action', function($row){
                 $btn = '<a href="'.route('admin.projects.edit',$row->id).'" class="edit btn btn-primary btn-sm" style="margin-right: 10px"><i class="fa fa-edit"></i> Edit </a>';
