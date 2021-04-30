@@ -61,8 +61,9 @@
                                                         <div class="form-group">
                                                             <label class="form-label">Status</label>
                                                             <select name="status" class="form-control">
-                                                                <option value="1" {{ $projectDetails->status == 1 ? "selected" : "" }} >Enabled</option>
-                                                                <option value="0" {{ $projectDetails->status == 0 ? "selected" : "" }} >Disabled</option>
+                                                                <option value="Ongoing" {{ $projectDetails->status == 'Ongoing' ? "selected" : "" }}>Ongoing</option>
+                                                                <option value="Completed" {{ $projectDetails->status == 'Completed' ? "selected" : "" }}>Completed</option>
+                                                                <option value="Holding" {{ $projectDetails->status == 'Holding' ? "selected" : "" }}>Holding</option>
                                                             </select>
 
                                                         </div>
